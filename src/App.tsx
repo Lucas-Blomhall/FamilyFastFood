@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import Home from "./scenes/home";
+import Home from "./scenes/home/home";
 import { SelectedPage } from "./shared/alltypes";
-import Navbar from "./scenes/navbar";
-import CreateRecipePage from "./scenes/CreateRecipePage";
-import CreateIngredientPage from "./scenes/CreateIngredientPage";
-import UpdateRecipePage from "./scenes/UpdateRecipePage";
-import Recipes from "./scenes/recipes";
-import SelectedRecipe from "./scenes/selectedrecipe";
-import Footer from "./scenes/CreateRecipePage";
+import Navbar from "./scenes/navbar/navbar";
+import CreateRecipePage from "./scenes/CreateRecipePage/CreateRecipePage";
+import CreateIngredientPage from "./scenes/CreateIngredientPage/CreateIngredientPage";
+import UpdateRecipePage from "./scenes/UpdateRecipePage/UpdateRecipePage";
+import Recipes from "./scenes/recipes/recipes";
+import SelectedRecipe from "./scenes/selectedrecipe/selectedrecipe";
+import Footer from "./scenes/CreateRecipePage/CreateRecipePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ApiTestDetailRecipe from "./scenes/ApiTestDetailRecipe";
-import RecipeDetail from "./scenes/RecipeDetail";
-import UserProfile from "./scenes/UserLogin";
-import AllRecipesList from "./scenes/AllRecipesList";
-import UserLogin from "./scenes/UserLogin";
+import ApiTestDetailRecipe from "./scenes/ApiTestDetailRecipe/ApiTestDetailRecipe";
+import RecipeDetail from "./scenes/RecipeDetail/RecipeDetail";
+import UserProfile from "./scenes/UserLogin/UserLogin";
+import AllRecipesList from "./scenes/AllRecipesList/AllRecipesList";
+import UserLogin from "./scenes/UserLogin/UserLogin";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(

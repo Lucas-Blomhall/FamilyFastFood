@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Table,
   TableBody,
@@ -7,15 +7,12 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Button,
   SelectChangeEvent,
   FormControl,
   InputLabel,
   Select,
   MenuItem,
-  useMediaQuery,
 } from "@mui/material";
-import lucasselfiefffbackground from "./lucasselfiefffbackground.png";
 import { Ingredient, Tags } from "../../shared/AllRecipesTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { SelectedPage } from "../../shared/alltypes";
@@ -70,9 +67,9 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   // const [userProfile, setUserProfile] = useState<ProfileLogins[]>([]);
 
-  //Recipe Delete och Update Ids UseState:
-  const [recipeToUpdateId, setRecipeToUpdateId] = useState(null);
-  const [recipeToDeleteId, setRecipeToDeleteId] = useState(null);
+  // //Recipe Delete och Update Ids UseState:
+  // const [recipeToUpdateId, setRecipeToUpdateId] = useState(null);
+  // const [recipeToDeleteId, setRecipeToDeleteId] = useState(null);
 
   const [events, setEvents] = useState([]);
 
@@ -108,10 +105,10 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
     setAge(event.target.value as string);
   };
 
-  const [updatedData, setUpdatedData] = useState({
-    // define initial structure of your updatedData
-    // eg. recipesTitle: '', description: '', etc... based on the data structure your API expects
-  });
+  // const [updatedData, setUpdatedData] = useState({
+  // define initial structure of your updatedData
+  // eg. recipesTitle: '', description: '', etc... based on the data structure your API expects
+  // });
 
   //UseParams
   const { selectedID } = useParams();
@@ -156,21 +153,21 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
   // };
 
   //Cuisines select (Cuisinel)
-  const [selectedCuisinel, setSelectedCuisinel] = useState<number | null>(null);
-  const handleCuisinelChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedCuisinel(Number(event.target.value));
-  };
+  // const [selectedCuisinel, setSelectedCuisinel] = useState<number | null>(null);
+  // const handleCuisinelChange = (
+  //   event: React.ChangeEvent<HTMLSelectElement>
+  // ) => {
+  //   setSelectedCuisinel(Number(event.target.value));
+  // };
 
   //Tags select (Tag)
-  const [selectedTag, setSelectedTag] = useState<number | null>(null);
-  const handleTagChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedTag(Number(event.target.value));
-  };
+  // const [selectedTag, setSelectedTag] = useState<number | null>(null);
+  // const handleTagChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   setSelectedTag(Number(event.target.value));
+  // };
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  // const [title, setTitle] = useState("");
+  // const [description, setDescription] = useState("");
 
   //Categories
   useEffect(() => {

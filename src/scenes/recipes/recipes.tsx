@@ -4,9 +4,7 @@ import {
   AcademicCapIcon,
 } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import lucasselfiefffbackground from "./src/assets/lucasselfiefffbackground.png";
 import Recipesfile from "./Recipesfile";
-import { useState } from "react";
 import { RecipesType, SelectedPage } from "../../shared/alltypes";
 import HText from "../../shared/HText";
 import ActionButton from "../../shared/ActionButton";

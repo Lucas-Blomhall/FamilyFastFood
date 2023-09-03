@@ -1,5 +1,3 @@
-import lucasselfiefffbackground from "@/assets/lucasselfiefffbackground.png";
-
 import { motion } from "framer-motion";
 import { SelectedPage } from "../../shared/alltypes";
 

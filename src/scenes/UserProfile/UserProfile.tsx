@@ -13,14 +13,11 @@ import {
   Select,
   MenuItem,
   SelectChangeEvent,
-  Input,
-  TextField,
-  useMediaQuery,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import Jordklot from "@/assets/Jordklot.png";
 import { SelectedPage } from "../../shared/alltypes";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 type Props = {
@@ -35,14 +32,14 @@ type ProfileLogins = {
   userCaloriesGoal: number;
 };
 
-const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
-  const navigate = useNavigate();
-  const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+const UserProfile = ({ setSelectedPage }: Props) => {
+  // const navigate = useNavigate();
+  // const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   const [SelectedUserLoginsId, setSelectedUserLoginsId] =
     useState<ProfileLogins | null>(null);
   const [age, setAge] = useState("");
 
-  const [userPassword, setUserPassword] = useState("");
+  // const [userPassword, setUserPassword] = useState("");
   const [userCaloriesGoal, setUserCaloriesGoal] = useState(
     SelectedUserLoginsId?.userCaloriesGoal || 0
   );
@@ -52,12 +49,12 @@ const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
     setAge(event.target.value as string);
   };
 
-  const cards = [
-    { title: "Create a new Recipe", route: "/route1" },
-    { title: "Create a new Ingredient", route: "/route2" },
-    { title: "Update a Recipe", route: "/route3" },
-    // Add more cards here
-  ];
+  // const cards = [
+  //   { title: "Create a new Recipe", route: "/route1" },
+  //   { title: "Create a new Ingredient", route: "/route2" },
+  //   { title: "Update a Recipe", route: "/route3" },
+  //   // Add more cards here
+  // ];
 
   //I get all the Users from the web api and put it in a UseState.
   useEffect(() => {
@@ -77,22 +74,22 @@ const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
   });
 
   //Login button function
-  const UpdateUserFieldCaloriesGoal = () => {
-    console.log("Hi!");
-    if (SelectedUserLoginsId) {
-      try {
-        if (userCaloriesGoal >= 500) {
-          console.log("Goal made!");
-          return;
-        }
-      } catch (error) {
-        console.error(
-          "Something went wrong Logging in. Try again. Maybe it is the wrong password?: ",
-          error
-        );
-      }
-    }
-  };
+  // const UpdateUserFieldCaloriesGoal = () => {
+  //   console.log("Hi!");
+  //   if (SelectedUserLoginsId) {
+  //     try {
+  //       if (userCaloriesGoal >= 500) {
+  //         console.log("Goal made!");
+  //         return;
+  //       }
+  //     } catch (error) {
+  //       console.error(
+  //         "Something went wrong Logging in. Try again. Maybe it is the wrong password?: ",
+  //         error
+  //       );
+  //     }
+  //   }
+  // };
 
   const handleUpdate = async () => {
     // Construct the user data you want to send to the server

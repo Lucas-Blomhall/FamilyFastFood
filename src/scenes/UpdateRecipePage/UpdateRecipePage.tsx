@@ -1,57 +1,57 @@
-import { Checkbox, FormControlLabel, TableCell } from "@mui/material";
+import { TableCell } from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HText from "../../shared/HText";
 import { SelectedPage } from "../../shared/alltypes";
 
-type Categories = {
-  //find(arg0: (cat: any) => boolean): unknown;
-  categoriesId: number;
-  categoriesName: string;
-};
+// type Categories = {
+//   //find(arg0: (cat: any) => boolean): unknown;
+//   categoriesId: number;
+//   categoriesName: string;
+// };
 
-type Cuisines = {
-  cuisinesId: number;
-  cuisinesName: string;
-};
+// type Cuisines = {
+//   cuisinesId: number;
+//   cuisinesName: string;
+// };
 
-type IngredientNFV = {
-  ingredientID: number;
-  protein: number;
-  calories: number;
-  sugars: number;
-};
+// type IngredientNFV = {
+//   ingredientID: number;
+//   protein: number;
+//   calories: number;
+//   sugars: number;
+// };
 
-type Ingredients = {
-  ingredientsID: number;
-  ingredientsName: string;
-  nutritionFacts: NutritionFacts;
-};
+// type Ingredients = {
+//   ingredientsID: number;
+//   ingredientsName: string;
+//   nutritionFacts: NutritionFacts;
+// };
 
-type Recipe = {
-  recipesID: number;
-  recipesTitle: string;
-  description: string;
-  prepTime: string;
-  totalTime: string;
-  servingSize: number;
-  stepbystep1: string;
-  stepbystep2: string;
-  stepbystep3: string;
-  stepbystep4: string;
-  stepbystep5: string;
-  stepbystep6: string;
-  ingredientsID1: number;
-  ingredientsID2: number;
-  ingredientsID3: number;
-  ingredientsID4: number;
-  ingredientsID5: number;
-  categoriesId: number;
-  cuisinesId: number;
-  tagsId: number;
-  //New NFV nutrition facts value
-  ingredients: IngredientNFV[];
-};
+// type Recipe = {
+//   recipesID: number;
+//   recipesTitle: string;
+//   description: string;
+//   prepTime: string;
+//   totalTime: string;
+//   servingSize: number;
+//   stepbystep1: string;
+//   stepbystep2: string;
+//   stepbystep3: string;
+//   stepbystep4: string;
+//   stepbystep5: string;
+//   stepbystep6: string;
+//   ingredientsID1: number;
+//   ingredientsID2: number;
+//   ingredientsID3: number;
+//   ingredientsID4: number;
+//   ingredientsID5: number;
+//   categoriesId: number;
+//   cuisinesId: number;
+//   tagsId: number;
+//   //New NFV nutrition facts value
+//   ingredients: IngredientNFV[];
+// };
 
 //Här börjar Nutrition Facts
 type NutritionFacts = {
@@ -100,7 +100,7 @@ const UpdateRecipePage = ({ setSelectedPage }: Props) => {
   const [cuisines, setCuisines] = useState<Cuisines2[]>([]);
   const [tags, setTags] = useState<Tags2[]>([]);
 
-  const [recipesID, setRecipeID] = useState("");
+  // const [recipesID, setRecipeID] = useState("");
   const [recipesTitle, setRecipesTitle] = useState("");
   const [description, setDescription] = useState("");
   const [prepTime, setPrepTime] = useState("");
@@ -125,14 +125,14 @@ const UpdateRecipePage = ({ setSelectedPage }: Props) => {
   const [ingredientsID5, setIngredientsID5] = useState(0);
 
   //Ingredients select
-  const [selectedIngredient, setSelectedIngredient] = useState<number | null>(
-    null
-  );
-  const handleIngredientChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setSelectedIngredient(Number(event.target.value));
-  };
+  // const [selectedIngredient, setSelectedIngredient] = useState<number | null>(
+  //   null
+  // );
+  // const handleIngredientChange = (
+  //   event: React.ChangeEvent<HTMLSelectElement>
+  // ) => {
+  //   setSelectedIngredient(Number(event.target.value));
+  // };
 
   //Ingredients
   useEffect(() => {

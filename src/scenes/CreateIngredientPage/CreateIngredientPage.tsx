@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 import { SelectedPage } from "../../shared/alltypes";
 import HText from "../../shared/HText";
 

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 export type RecipeProps = {
   name: string;
   description?: string;
@@ -15,7 +13,6 @@ const Class = ({
   onSelect,
   name,
   description,
-  image,
 }: RecipeProps) => {
   const handleClick = () => {
     onSelect(category);

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import lucasselfiefffbackground from "@/assets/lucasselfiefffbackground.png";
 import { useForm } from "react-hook-form";
 import HText from "../../shared/HText";
 import { SelectedPage } from "../../shared/alltypes";

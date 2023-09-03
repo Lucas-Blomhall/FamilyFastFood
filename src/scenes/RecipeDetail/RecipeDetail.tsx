@@ -1,4 +1,3 @@
-import platetransparent from "./src/assets/platetransparent.png";
 import {
   Avatar,
   Card,
@@ -62,12 +61,12 @@ type Cuisines = {
   cuisinesName: string;
 };
 
-type IngredientNFV = {
-  ingredientID: number;
-  protein: number;
-  calories: number;
-  sugars: number;
-};
+// type IngredientNFV = {
+//   ingredientID: number;
+//   protein: number;
+//   calories: number;
+//   sugars: number;
+// };
 
 type Ingredients = {
   ingredientsID: number;
@@ -159,11 +158,11 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   const [category, setCategory] = useState<Categories[]>([]);
   const [cuisine, setCuisine] = useState<Cuisines[]>([]);
   const [ingredient, setIngredient] = useState<Ingredients[]>([]);
-  const [changedServingSize, setChangedServingSize] = useState(1);
+  // const [changedServingSize, setChangedServingSize] = useState(1);
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
 
-  const [events, setEvents] = useState([]);
+  // const [events, setEvents] = useState([]);
 
   //Card thing:
   const [expanded, setExpanded] = React.useState(false);
@@ -173,26 +172,26 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   };
 
   //NutritionFact
-  const [nutritionFacts, setNutritionFacts] = useState<NutritionFacts>({
-    protein: 0,
-    calories: 0,
-    sugars: 0,
-    totalCarbohydrates: 0,
-    totalFat: 0,
-    saturatedFat: 0,
-    transFat: 0,
-    cholesterol: 0,
-    sodium: 0,
-    dietaryFiber: 0,
-    vitaminA: 0,
-    vitaminC: 0,
-    calcium: 0,
-    iron: 0,
-    cost: 0,
-    whereToGet: "",
-    notes: "",
-    rating: 0,
-  });
+  // const [nutritionFacts, setNutritionFacts] = useState<NutritionFacts>({
+  //   protein: 0,
+  //   calories: 0,
+  //   sugars: 0,
+  //   totalCarbohydrates: 0,
+  //   totalFat: 0,
+  //   saturatedFat: 0,
+  //   transFat: 0,
+  //   cholesterol: 0,
+  //   sodium: 0,
+  //   dietaryFiber: 0,
+  //   vitaminA: 0,
+  //   vitaminC: 0,
+  //   calcium: 0,
+  //   iron: 0,
+  //   cost: 0,
+  //   whereToGet: "",
+  //   notes: "",
+  //   rating: 0,
+  // });
 
   // Using useState
   const [numericNutritionFacts, setNumericNutritionFacts] =
@@ -359,34 +358,34 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   }, []);
 
   //Update User values
-  const handleUpdateUser = async () => {
-    // Construct the user data you want to send to the server
-    const userToUpdate = {
-      UserLoginsId: 1,
-      UserLoginsName: "Adam",
-      UserLoginsPassword: "SecuredPassword5",
-      UserCaloriesGoal: userProfile?.userCaloriesGoal,
-      userCaloriesConsumed: null,
-    };
+  // const handleUpdateUser = async () => {
+  //   // Construct the user data you want to send to the server
+  //   const userToUpdate = {
+  //     UserLoginsId: 1,
+  //     UserLoginsName: "Adam",
+  //     UserLoginsPassword: "SecuredPassword5",
+  //     UserCaloriesGoal: userProfile?.userCaloriesGoal,
+  //     userCaloriesConsumed: null,
+  //   };
 
-    try {
-      const response = await fetch(`http://localhost:5239/api/UserLogins/1`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userToUpdate),
-      });
+  //   try {
+  //     const response = await fetch(`http://localhost:5239/api/UserLogins/1`, {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(userToUpdate),
+  //     });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
 
-      console.log("Update successful!");
-    } catch (error) {
-      console.error("An error occurred while updating the user: ", error);
-    }
-  };
+  //     console.log("Update successful!");
+  //   } catch (error) {
+  //     console.error("An error occurred while updating the user: ", error);
+  //   }
+  // };
 
   //Addfunction
   const plusfunction = () => {
@@ -469,7 +468,7 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   const CaloriesConsumedButton = () => {
     console.log("hi");
     if (userProfile) {
-      let oldUserCaloriesConsumed = userProfile.userCaloriesConsumed;
+      // let oldUserCaloriesConsumed = userProfile.userCaloriesConsumed;
       let newUserCaloriesConsumed =
         userProfile.userCaloriesConsumed + numericNutritionFacts.calories;
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { FoodCategoryButtonProps } from "../../shared/AllInterfaces";
 
 const thetestforcategories = ({

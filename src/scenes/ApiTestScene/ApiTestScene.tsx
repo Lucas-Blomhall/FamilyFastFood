@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { SelectedPage } from "../../shared/alltypes";
+// import { SelectedPage } from "../../shared/alltypes";
 import { IRecipes } from "../../TypesFolder/ApiTypes";
-import ApiTestDetailRecipe from "../ApiTestDetailRecipe";
+import ApiTestDetailRecipe from "../ApiTestDetailRecipe/ApiTestDetailRecipe";
 
-type Props = {
-  list: IRecipes[];
-  setSelectedPage: (value: SelectedPage) => void;
-};
+// type Props = {
+//   list: IRecipes[];
+//   setSelectedPage: (value: SelectedPage) => void;
+// };
 
-const ApiTestScene = ({ setSelectedPage }: Props) => {
+const ApiTestScene = () => {
   const [recipes, setRecipes] = useState<IRecipes[]>([]);
   const [selectedRecipeId, setSelectedRecipeId] = useState<number | null>(null);
 
