@@ -7,13 +7,16 @@ import CreateIngredientPage from "./scenes/CreateIngredientPage/CreateIngredient
 import UpdateRecipePage from "./scenes/UpdateRecipePage/UpdateRecipePage";
 import Recipes from "./scenes/recipes/recipes";
 import SelectedRecipe from "./scenes/selectedrecipe/selectedrecipe";
-import Footer from "./scenes/CreateRecipePage/CreateRecipePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ApiTestDetailRecipe from "./scenes/ApiTestDetailRecipe/ApiTestDetailRecipe";
 import RecipeDetail from "./scenes/RecipeDetail/RecipeDetail";
 import UserProfile from "./scenes/UserLogin/UserLogin";
 import AllRecipesList from "./scenes/AllRecipesList/AllRecipesList";
 import UserLogin from "./scenes/UserLogin/UserLogin";
+import MainContent from "./scenes/MainContent/MainContent";
+import Footer from "./scenes/footer/footer";
+import DiabetesPage from "./scenes/DiabetesPage/DiabetesPage";
+import GymPage from "./scenes/GymPage/GymPage";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -42,6 +45,10 @@ function App() {
           setSelectedPage={setSelectedPage}
         />
         <Home setSelectedPage={setSelectedPage} />
+        <MainContent setSelectedPage={setSelectedPage} />
+        <DiabetesPage setSelectedPage={setSelectedPage} />
+        <GymPage setSelectedPage={setSelectedPage} />
+
         <Routes>
           <Route
             path="/"
@@ -93,8 +100,8 @@ function App() {
         <UpdateRecipePage setSelectedPage={setSelectedPage} />
         <Recipes setSelectedPage={setSelectedPage} />
         <SelectedRecipe setSelectedPage={setSelectedPage} />
-        {/*<ContactMe setSelectedPage={setSelectedPage} /> */}
         <Footer setSelectedPage={setSelectedPage} />
+        {/* <ContactMe setSelectedPage={setSelectedPage} /> */}
       </Router>
     </div>
   );

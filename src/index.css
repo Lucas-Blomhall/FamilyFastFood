@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 .typing-effect {
   white-space: nowrap;
   overflow: hidden; 

@@ -1,6 +1,9 @@
 
 export enum SelectedPage {
     Home = "home",
+    MainContent = "maincontent",
+    DiabetesPage = "diabetespage",
+    GymPage = "gympage",
     Footer = "footer",
     CardMenu = "cardmenu",
     CreateRecipePage = "createrecipepage",
