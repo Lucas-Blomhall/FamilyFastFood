@@ -14,7 +14,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Ingredient, Tags } from "../../shared/AllRecipesTypes";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { SelectedPage } from "../../shared/alltypes";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import FullCalendar from "@fullcalendar/react";

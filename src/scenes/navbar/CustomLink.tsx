@@ -7,7 +7,7 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
+const CustomLink = ({ page, selectedPage, setSelectedPage }: Props) => {
   //Här tar jag bort mellandrum från meny namnen
   const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
   return (
@@ -23,4 +23,4 @@ const Link = ({ page, selectedPage, setSelectedPage }: Props) => {
   );
 };
 
-export default Link;
+export default CustomLink;

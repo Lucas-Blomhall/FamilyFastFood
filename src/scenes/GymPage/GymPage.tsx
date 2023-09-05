@@ -27,28 +27,15 @@ const GymPage = ({ setSelectedPage }: Props) => {
 
   return (
     <section id="gympage" className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0">
-      <div className="flex flex-col items-center space-y-4">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Sports nutrition
-        </h1>
-        <motion.div
-          className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
-          onViewportEnter={() => setSelectedPage(SelectedPage.GymPage)}
-        >
+      <motion.div
+        className="main-content mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        onViewportEnter={() => setSelectedPage(SelectedPage.GymPage)}
+      >
+        <div className=" flex flex-col items-center space-y-4">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            Sports nutrition
+          </h1>
           <div className="flex flex-col items-center space-y-4 px-4 md:px-10">
-            <blockquote className="border-l-4 border-gray-600 pl-4 italic text-lg">
-              “Sports nutrition is the study and practice of nutrition and diet
-              with regards to improving anyone's athletic performance. Nutrition
-              is an important part of many sports training regimens, being
-              popular in strength sports (such as weightlifting and
-              bodybuilding) and endurance sports (e.g. cycling, running,
-              swimming, rowing). Sports nutrition focuses its studies on the
-              type, as well as the quantity of fluids and food taken by an
-              athlete. In addition, it deals with the consumption of nutrients
-              such as vitamins, minerals, supplements, and organic substances
-              that include carbohydrates, proteins, and fats.” From Wikipedia,
-              the free encyclopedia
-            </blockquote>
             <p className="text-md leading-6 mt-4">
               In the realm of athletics, the importance of nutrition cannot be
               overstated. Whether you're training for strength, endurance, or
@@ -72,9 +59,9 @@ const GymPage = ({ setSelectedPage }: Props) => {
               with confidence, knowing that you're fueling your body right.
             </p>
           </div>
-          <div className="fade-in "></div>
-        </motion.div>
-      </div>
+        </div>
+        <div className="fade-in "></div>
+      </motion.div>
     </section>
   );
 };

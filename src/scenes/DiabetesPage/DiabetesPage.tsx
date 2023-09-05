@@ -20,14 +20,14 @@ const DiabetesPage = ({ setSelectedPage }: Props) => {
       id="diabetespage"
       className="gap-16 bg-gray-20 py-10 md:h-full md:pb-0"
     >
-      <div className="flex flex-col items-center space-y-4">
-        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          Diabetes
-        </h1>
-        <motion.div
-          className="mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
-          onViewportEnter={() => setSelectedPage(SelectedPage.DiabetesPage)}
-        >
+      <motion.div
+        className="main-content mx-auto w-5/6 items-center justify-center md:flex md:h-5/6"
+        onViewportEnter={() => setSelectedPage(SelectedPage.DiabetesPage)}
+      >
+        <div className="flex flex-col items-center space-y-4">
+          <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+            Diabetes
+          </h1>
           <div className="flex flex-col items-center space-y-4 px-4 md:px-10">
             <blockquote className="border-l-4 border-gray-600 pl-4 italic text-lg">
               “Diabetes mellitus, often known simply as diabetes, is a group of
@@ -53,8 +53,8 @@ const DiabetesPage = ({ setSelectedPage }: Props) => {
               strides in managing and preventing diabetes.
             </p>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

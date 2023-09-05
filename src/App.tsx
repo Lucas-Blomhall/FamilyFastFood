@@ -17,6 +17,7 @@ import MainContent from "./scenes/MainContent/MainContent";
 import Footer from "./scenes/footer/footer";
 import DiabetesPage from "./scenes/DiabetesPage/DiabetesPage";
 import GymPage from "./scenes/GymPage/GymPage";
+import CalendrarPage from "./scenes/CalendrarPage/CalendrarPage";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
@@ -44,14 +45,21 @@ function App() {
           selectedPage={selectedPage}
           setSelectedPage={setSelectedPage}
         />
-        <Home setSelectedPage={setSelectedPage} />
-        <MainContent setSelectedPage={setSelectedPage} />
-        <DiabetesPage setSelectedPage={setSelectedPage} />
-        <GymPage setSelectedPage={setSelectedPage} />
-
         <Routes>
           <Route
             path="/"
+            element={<Home setSelectedPage={setSelectedPage} />}
+          />
+          <Route
+            path="/diabetes"
+            element={<DiabetesPage setSelectedPage={setSelectedPage} />}
+          />
+          <Route
+            path="/gym"
+            element={<GymPage setSelectedPage={setSelectedPage} />}
+          />
+          <Route
+            path="/login"
             element={
               <UserLogin
                 setSelectedPage={setSelectedPage}
@@ -78,21 +86,17 @@ function App() {
             }
           />
           <Route
-            path="/recipes/:id"
+            path="/calendar"
+            element={<CalendrarPage setSelectedPage={setSelectedPage} />}
+          />
+          <Route
+            path="/recipe/:id"
             element={
               <RecipeDetail
                 setSelectedPage={setSelectedPage}
                 selectedID={selectedID}
               />
             }
-          />
-          <Route
-            path="/api/Recipes/:recipeID"
-            element={<ApiTestDetailRecipe />}
-          />
-          <Route
-            path="/api/ApiTestDetail/:id"
-            element={<ApiTestDetailRecipe />}
           />
         </Routes>
         <CreateRecipePage setSelectedPage={setSelectedPage} />

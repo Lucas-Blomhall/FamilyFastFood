@@ -1,19 +1,12 @@
-// import { useEffect, useState } from "react";
-// import React from "react";
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-// import Link from "./Link";
-// import { SelectedPage } from "../../shared/types";
-// import ActionButton from "../../shared/ActionButton";
-// import { useMediaQuery } from "@react-hook/media-query";
-
 import fffimage from "@/assets/FamilyFastFoodHatTransBackgroundText.png";
 import { InputBase, useMediaQuery } from "@mui/material";
 import { SelectedPage } from "../../shared/alltypes";
 import { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import Link from "./Link";
 import { styled, alpha } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
+import CustomLink from "./CustomLink";
 
 type Props = {
   isTopOfPage: boolean;
@@ -86,26 +79,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
-                  <Link
-                    page="Home"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="CreateRecipePage"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="CreateIngredientPage"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
-                  <Link
-                    page="Footer"
-                    selectedPage={selectedPage}
-                    setSelectedPage={setSelectedPage}
-                  />
+                  <Link to="/">
+                    <button className="btn-primary">Home</button>
+                  </Link>
+                  <Link to="/diabetes">
+                    <button className="btn-primary">
+                      Learn about Diabetes
+                    </button>
+                  </Link>
+                  <Link to="/gym">
+                    <button className="btn-primary">
+                      Learn about Gym Nutrition
+                    </button>
+                  </Link>
+                  <Link to="/login">
+                    <button className="btn-primary">Login</button>
+                  </Link>
                 </div>
                 <Search>
                   <SearchIconWrapper>
@@ -148,17 +137,17 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           </Search>
           {/* MENU ITEMS */}
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <Link
+            <CustomLink
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <CustomLink
               page="CreateRecipePage"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <CustomLink
               page="Footer"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}

@@ -4,6 +4,9 @@
 
 
 
+.main-content {
+  padding-top: 4rem; /* Based on py-4 which is usually 16px or 1rem */
+}
 
 .typing-effect {
   white-space: nowrap;
