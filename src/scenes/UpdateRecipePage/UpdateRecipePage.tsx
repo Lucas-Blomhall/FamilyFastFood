@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import HText from "../../shared/HText";
 import { SelectedPage } from "../../shared/alltypes";
+import { useNavigate } from "react-router-dom";
 
 // type Categories = {
 //   //find(arg0: (cat: any) => boolean): unknown;
@@ -123,6 +124,8 @@ const UpdateRecipePage = ({ setSelectedPage }: Props) => {
   const [ingredientsID3, setIngredientsID3] = useState(0);
   const [ingredientsID4, setIngredientsID4] = useState(0);
   const [ingredientsID5, setIngredientsID5] = useState(0);
+
+  const navigate = useNavigate();
 
   //Ingredients select
   // const [selectedIngredient, setSelectedIngredient] = useState<number | null>(
