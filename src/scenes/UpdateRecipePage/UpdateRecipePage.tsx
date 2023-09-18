@@ -627,6 +627,13 @@ const UpdateRecipePage = ({ setSelectedPage }: Props) => {
               </div>
             </div>
             <button type="submit">Update Recipe</button>
+
+            <button
+              className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
+              onClick={() => navigate(-1)}
+            >
+              Go Back
+            </button>
           </form>
 
           <br />

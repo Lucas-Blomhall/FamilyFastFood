@@ -3,6 +3,7 @@ import { SelectedPage } from "@/shared/alltypes";
 import { Checkbox, FormControlLabel, TableCell } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type Categories = {
   //find(arg0: (cat: any) => boolean): unknown;
@@ -123,6 +124,7 @@ const CreateRecipePage = ({ setSelectedPage }: Props) => {
   const [ingredientsID3, setIngredientsID3] = useState(0);
   const [ingredientsID4, setIngredientsID4] = useState(0);
   const [ingredientsID5, setIngredientsID5] = useState(0);
+  const navigate = useNavigate();
 
   //Ingredients select
   const [selectedIngredient, setSelectedIngredient] = useState<number | null>(
@@ -620,6 +622,13 @@ const CreateRecipePage = ({ setSelectedPage }: Props) => {
               </div>
             </div>
             <button type="submit">Create Recipe</button>
+
+            <button
+              className="rounded border border-blue-500 bg-transparent px-4 py-2 font-semibold text-blue-700 hover:border-transparent hover:bg-blue-500 hover:text-white"
+              onClick={() => navigate(-1)}
+            >
+              Go Back
+            </button>
           </form>
 
           <br />

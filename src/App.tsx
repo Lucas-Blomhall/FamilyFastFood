@@ -90,7 +90,7 @@ function App() {
             element={<CalendrarPage setSelectedPage={setSelectedPage} />}
           />
           <Route
-            path="/recipe/:id"
+            path="/recipes/:id"
             element={
               <RecipeDetail
                 setSelectedPage={setSelectedPage}
@@ -98,10 +98,18 @@ function App() {
               />
             }
           />
+
+          <Route
+            path="/create"
+            element={<CreateRecipePage setSelectedPage={setSelectedPage} />}
+          />
+
+          <Route
+            path="/update"
+            element={<UpdateRecipePage setSelectedPage={setSelectedPage} />}
+          />
         </Routes>
-        <CreateRecipePage setSelectedPage={setSelectedPage} />
-        <CreateIngredientPage setSelectedPage={setSelectedPage} />
-        <UpdateRecipePage setSelectedPage={setSelectedPage} />
+
         <Recipes setSelectedPage={setSelectedPage} />
         <SelectedRecipe setSelectedPage={setSelectedPage} />
         <Footer setSelectedPage={setSelectedPage} />

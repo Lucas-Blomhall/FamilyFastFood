@@ -12,6 +12,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Button,
 } from "@mui/material";
 import { Ingredient, Tags } from "../../shared/AllRecipesTypes";
 import { Link, useNavigate, useParams } from "react-router-dom";
@@ -83,6 +84,7 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
           (entry: { caloriesConsumed: any; date: any }) => ({
             title: `${entry.caloriesConsumed} calories`,
             start: entry.date,
+            color: "purple",
           })
         );
         setEvents(formattedEvents);
@@ -277,6 +279,14 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
     navigate(`/recipes/${id}`);
   };
 
+  const handleCreateRecipeButton = async () => {
+    navigate(`/create`);
+  };
+
+  const handleUpdateRecipeButton = async () => {
+    navigate(`/update`);
+  };
+
   //From user page:
 
   //I get all the Users from the web api and put it in a UseState.
@@ -440,6 +450,22 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
         events={events}
         eventContent={renderEventContent}
       />
+
+      <Button
+        variant="contained"
+        color="success"
+        onClick={() => handleCreateRecipeButton()}
+      >
+        Create
+      </Button>
+
+      <Button
+        variant="contained"
+        color="success"
+        onClick={() => handleUpdateRecipeButton()}
+      >
+        Update
+      </Button>
 
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
