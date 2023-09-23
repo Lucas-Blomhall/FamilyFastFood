@@ -40,11 +40,7 @@ function App() {
   return (
     <div className="app bg-gray-20">
       <Router>
-        <Navbar
-          isTopOfPage={isTopOfPage}
-          selectedPage={selectedPage}
-          setSelectedPage={setSelectedPage}
-        />
+        <Navbar isTopOfPage={isTopOfPage} />
         <Routes>
           <Route
             path="/"

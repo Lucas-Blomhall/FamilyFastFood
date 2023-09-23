@@ -67,7 +67,6 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
 
   const [recipes, setRecipes] = useState<Recipe[]>([]);
   // const [userProfile, setUserProfile] = useState<ProfileLogins[]>([]);
-
   // //Recipe Delete och Update Ids UseState:
   // const [recipeToUpdateId, setRecipeToUpdateId] = useState(null);
   // const [recipeToDeleteId, setRecipeToDeleteId] = useState(null);
@@ -84,7 +83,6 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
           (entry: { caloriesConsumed: any; date: any }) => ({
             title: `${entry.caloriesConsumed} calories`,
             start: entry.date,
-            color: "purple",
           })
         );
         setEvents(formattedEvents);
@@ -324,12 +322,13 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
   //   }
   // };
 
+  //Tillbakasök
   const handleUpdateUser = async () => {
     // Construct the user data you want to send to the server
     const userToUpdate = {
       UserLoginsId: 1,
-      UserLoginsName: "Adam",
-      UserLoginsPassword: "SecuredPassword5",
+      UserLoginsName: "Lucas",
+      UserLoginsPassword: "Hello123",
       UserCaloriesGoal: userCaloriesGoal,
       userCaloriesConsumed: 0,
     };
@@ -387,14 +386,6 @@ const AllRecipesList = ({ setSelectedID }: Props) => {
   return (
     <section id="allrecipeslist" className="mx-auto min-h-full w-5/6 py-20">
       <div className="flex items-center space-x-4">
-        <div className="relative">
-          {/* <img
-            className="w-20 h-20 rounded-full"
-            alt=""
-            src={lucasselfiefffbackground}
-          /> */}
-          <span className="bottom-0 left-14 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-        </div>
         <div className="font-medium dark:text-white">
           <div>Lucas Blomhäll</div>
           <div className="text-sm text-gray-500 dark:text-gray-400">

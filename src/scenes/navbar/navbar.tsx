@@ -10,8 +10,6 @@ import CustomLink from "./CustomLink";
 
 type Props = {
   isTopOfPage: boolean;
-  selectedPage: SelectedPage;
-  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Search = styled("div")(({ theme }) => ({
@@ -56,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage }: Props) => {
   const flexBetween = "flex items-center justify-between";
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -79,6 +77,9 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {isAboveMediumScreens ? (
               <div className={`${flexBetween} w-full`}>
                 <div className={`${flexBetween} gap-8 text-sm`}>
+                  <Link to="/login">
+                    <button className="btn-primary">Login</button>
+                  </Link>
                   <Link to="/">
                     <button className="btn-primary">Home</button>
                   </Link>
@@ -91,9 +92,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                     <button className="btn-primary">
                       Learn about Gym Nutrition
                     </button>
-                  </Link>
-                  <Link to="/login">
-                    <button className="btn-primary">Login</button>
                   </Link>
                 </div>
                 <Search>
@@ -137,21 +135,18 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
           </Search>
           {/* MENU ITEMS */}
           <div className="ml-[33%] flex flex-col gap-10 text-2xl">
-            <CustomLink
-              page="Home"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <CustomLink
-              page="CreateRecipePage"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <CustomLink
-              page="Footer"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <Link to="/login">
+              <button className="btn-primary">Login</button>
+            </Link>
+            <Link to="/">
+              <button className="btn-primary">Home</button>
+            </Link>
+            <Link to="/diabetes">
+              <button className="btn-primary">Learn about Diabetes</button>
+            </Link>
+            <Link to="/gym">
+              <button className="btn-primary">Learn about Gym Nutrition</button>
+            </Link>
           </div>
         </div>
       )}

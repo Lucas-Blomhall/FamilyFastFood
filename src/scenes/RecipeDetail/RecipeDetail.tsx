@@ -153,7 +153,9 @@ type NumericProfileLogins = {
 
 const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   const [selectedRecipeID, setSelectedRecipeID] = useState<Recipe | null>(null);
-  const [userProfile, setUserProfile] = useState<ProfileLogins | null>(null);
+  const [userProfile, setUserProfile] = useState<ProfileLogins>();
+  const [stateUserCaloriesConsumed, setStateUserCaloriesConsumed] =
+    useState<number>();
 
   const [category, setCategory] = useState<Categories[]>([]);
   const [cuisine, setCuisine] = useState<Cuisines[]>([]);
@@ -469,13 +471,10 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
     console.log("hi");
     if (userProfile) {
       // let oldUserCaloriesConsumed = userProfile.userCaloriesConsumed;
-      let newUserCaloriesConsumed =
-        userProfile.userCaloriesConsumed + numericNutritionFacts.calories;
+      let newUserCaloriesConsumed = (userProfile.userCaloriesConsumed +=
+        numericNutritionFacts.calories);
 
-      setUserProfile({
-        ...userProfile,
-        userCaloriesConsumed: newUserCaloriesConsumed,
-      });
+      setStateUserCaloriesConsumed(newUserCaloriesConsumed);
 
       console.log("userProfile: " + userProfile?.userCaloriesConsumed);
 
@@ -596,7 +595,7 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
                 Calories Consumed:
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                {userProfile?.userCaloriesConsumed ?? "Not available"}
+                {stateUserCaloriesConsumed ?? userProfile?.userCaloriesConsumed}
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
