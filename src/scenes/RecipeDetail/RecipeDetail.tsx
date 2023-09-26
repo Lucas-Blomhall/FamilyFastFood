@@ -152,6 +152,7 @@ type NumericProfileLogins = {
 };
 
 const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
+  const [currentDate, setCurrentDate] = useState<string>("");
   const [selectedRecipeID, setSelectedRecipeID] = useState<Recipe | null>(null);
   const [userProfile, setUserProfile] = useState<ProfileLogins>();
   const [stateUserCaloriesConsumed, setStateUserCaloriesConsumed] =
@@ -163,6 +164,12 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   // const [changedServingSize, setChangedServingSize] = useState(1);
   const navigate = useNavigate();
   const [isDataFetched, setIsDataFetched] = useState(false);
+
+  //Here will the DailyCaloricIntakeEntries properties be:
+  // const [dailyCaloricIntakeEntryId, setDailyCaloricIntakeEntryId] = useState(0);
+  const [userId, setUserId] = useState(0);
+  const [date, setDate] = useState("2023-01-01");
+  const [caloriesConsumed, setCaloriesConsumed] = useState(0);
 
   // const [events, setEvents] = useState([]);
 
@@ -226,6 +233,16 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
   //   whereToGet: "",
   //   notes: "",
   // });
+
+  useEffect(() => {
+    const todaysdate = new Date();
+    //Test code
+    // const formattedDate = "2023-09-26";
+    const formattedDate = `${todaysdate.getFullYear()}-${String(
+      todaysdate.getMonth() + 1
+    ).padStart(2, "0")}-${String(todaysdate.getDate()).padStart(2, "0")}`;
+    setCurrentDate(formattedDate);
+  }, []);
 
   useEffect(() => {
     const handleFetch = async () => {
@@ -468,11 +485,19 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
 
   //Calories meter eated
   const CaloriesConsumedButton = () => {
-    console.log("hi");
+    console.log("hi we are now inside: CaloriesConsumedButton");
     if (userProfile) {
       // let oldUserCaloriesConsumed = userProfile.userCaloriesConsumed;
       let newUserCaloriesConsumed = (userProfile.userCaloriesConsumed +=
         numericNutritionFacts.calories);
+
+      let intnewUserCaloriesConsumed = Math.ceil(newUserCaloriesConsumed);
+      setUserId(userProfile.userLoginsId);
+      console.log(userProfile.userLoginsId);
+      setDate(currentDate);
+      console.log(currentDate);
+      setCaloriesConsumed(newUserCaloriesConsumed);
+      console.log(newUserCaloriesConsumed);
 
       setStateUserCaloriesConsumed(newUserCaloriesConsumed);
 
@@ -495,6 +520,31 @@ const RecipeDetail = ({ setSelectedPage, selectedID }: Props) => {
         console.log("We are returning value");
         return newValues;
       });
+
+      const newDailyCaloricIntakeEntries = {
+        userId,
+        date,
+        caloriesConsumed,
+      };
+
+      console.log(newDailyCaloricIntakeEntries);
+      //Here is the new code
+      fetch("http://localhost:5239/api/DailyCaloricIntakeEntries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newDailyCaloricIntakeEntries),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+          // Om det lyckas kommer man hit
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Om det blir error så visas felmeddelandet
+        });
     }
   };
 
