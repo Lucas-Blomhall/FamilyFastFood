@@ -28,7 +28,7 @@ type ProfileLogins = {
   userLoginsPassword: string;
 };
 
-const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
+const UserLogin = ({ setSelectedPage, setSelectedUserID }: Props) => {
   const navigate = useNavigate();
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   const [SelectedUserLoginsId, setSelectedUserLoginsId] =
@@ -61,7 +61,7 @@ const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
 
   //Login button function
   const LoginButtonFunction = async (id: number) => {
-    console.log("Hi!");
+    console.log("Hi! We are in LoginButtonFunction");
     if (SelectedUserLoginsId) {
       try {
         if (userPassword === SelectedUserLoginsId.userLoginsPassword) {
@@ -112,4 +112,4 @@ const UserProfile = ({ setSelectedPage, setSelectedUserID }: Props) => {
   );
 };
 
-export default UserProfile;
+export default UserLogin;

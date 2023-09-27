@@ -10,7 +10,6 @@ import SelectedRecipe from "./scenes/selectedrecipe/selectedrecipe";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ApiTestDetailRecipe from "./scenes/ApiTestDetailRecipe/ApiTestDetailRecipe";
 import RecipeDetail from "./scenes/RecipeDetail/RecipeDetail";
-import UserProfile from "./scenes/UserLogin/UserLogin";
 import AllRecipesList from "./scenes/AllRecipesList/AllRecipesList";
 import UserLogin from "./scenes/UserLogin/UserLogin";
 import MainContent from "./scenes/MainContent/MainContent";
@@ -66,7 +65,7 @@ function App() {
           <Route
             path="/recipes"
             element={
-              <UserProfile
+              <UserLogin
                 setSelectedPage={setSelectedPage}
                 setSelectedUserID={setSelectedID}
               />
