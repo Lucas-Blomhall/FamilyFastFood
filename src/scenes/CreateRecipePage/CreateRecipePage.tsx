@@ -95,6 +95,8 @@ type Props = {
   setSelectedPage: (value: SelectedPage) => void;
 };
 
+//Continue from here delete green div
+
 const CreateRecipePage = ({ setSelectedPage }: Props) => {
   const [ingredients, setIngredients] = useState<Ingredient2[]>([]);
   const [categories, setCategories] = useState<Categories2[]>([]);
